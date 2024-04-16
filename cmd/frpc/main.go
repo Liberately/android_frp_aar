@@ -12,15 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package frpclib
 
 import (
 	_ "github.com/fatedier/frp/assets/frpc"
 	"github.com/fatedier/frp/cmd/frpc/sub"
-	"github.com/fatedier/frp/pkg/util/system"
 )
 
-func main() {
-	system.EnableCompatibilityMode()
-	sub.Execute()
+func Run(cfgFilePath string) {
+	sub.RunClient(cfgFilePath)
+}
+
+func Version() string {
+	return "0.57.0"
 }
